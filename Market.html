@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김밥 키오스크</title>
+    <title>Drag N Drop</title>
+    <script src=".jquery/jquery-3.7.1.min.js"></script>
+    <script src="dragNdrop.js"></script>
+    <link rel="stylesheet" href="dragNdrop.css">
 </head>
 <body>
-    
+    <h1>Drag &amp; Drop Test</h1>
+    <hr>
+    <div class="container">
+        <div class="box">menu area
+            <div draggable="true" menuname="아아" class="menu">menu 1</div>
+            <div draggable="true" menuname="뜨아" class="menu">menu 2</div>
+            <div draggable="true" menuname="라떼" class="menu">menu 3</div>
+        </div>
+        <div class="box">cart area</div>
+    </div>
+
 </body>
 </html>
