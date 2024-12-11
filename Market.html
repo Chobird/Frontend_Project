@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag N Drop</title>
-    <script src=".jquery/jquery-3.7.1.min.js"></script>
-    <script src="dragNdrop.js"></script>
-    <link rel="stylesheet" href="dragNdrop.css">
+    <title>햄버거 가게 키오스크</title>
+    <script src="./jquery/jquery-3.7.1.min.js"></script>
+    <script src="Market.js"></script>
+    <link rel="stylesheet" href="Market.css">
 </head>
 <body>
-    <h1>Drag &amp; Drop Test</h1>
+    <h1>메뉴를 골라 담으세요</h1>
     <hr>
     <div class="container">
-        <div class="box">menu area
-            <div draggable="true" menuname="아아" class="menu">menu 1</div>
-            <div draggable="true" menuname="뜨아" class="menu">menu 2</div>
-            <div draggable="true" menuname="라떼" class="menu">menu 3</div>
+        <div class="box menu-box">
+            <h3>메뉴</h3>
+            <div draggable="true" menuname="불고기 버거" price="5000" class="menu">불고기 버거 (₩5000)</div>
+            <div draggable="true" menuname="새우 버거" price="6000" class="menu">새우 버거 (₩6000)</div>
+            <div draggable="true" menuname="맛있는 버거" price="7000" class="menu">맛있는 버거 (₩7000)</div>
         </div>
-        <div class="box">cart area</div>
+    
+        <div class="box cart cart-box">
+            <h3>장바구니</h3>
+            <div class="cart-items"></div>
+                <!-- 장바구니 아이템이 여기 추가됩니다 -->
+            <div class="total-price">총액: ₩0</div>
+        </div>
     </div>
-
-</body>
-</html>
+    

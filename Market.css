@@ -1,34 +1,76 @@
-.container {background-color: rgb(200, 226, 250);
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
+    background-color: #f4f4f9;
+}
 
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
-.box{
-    background-color: bisque;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.box {
+    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    width: 300px;
-    margin-top: 10px;
+    background-color: #fff;
+    width: 45%;
+    min-height: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.overbox{
-    background-color: aqua;
-}
-.menu{
-    border: 1px solid blue;
-    padding: 10px;
+
+.menu, .cart-item {
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: cadetblue;
-    margin: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+    cursor: grab;
 }
-.overmenu{
-    background-color: chocolate;
+
+.menu:active, .cart-item:active {
+    cursor: grabbing;
 }
-#boxCart .menu{
-    height: 60px;
-    background-color: red;
-    border-color: yellow ;
+
+.draggingMenu {
+    opacity: 0.5;
 }
-.draggingMenu{
-    border-color: brown;
+
+.overBox {
+    border: 2px dashed #007bff;
+}
+
+.total-price {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+}
+
+button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.decrease {
+    background-color: #ff4b5c;
+}
+
+button.decrease:hover {
+    background-color: #c9303e;
 }
