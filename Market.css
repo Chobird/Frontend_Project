@@ -26,13 +26,23 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.menu img, .cart-item img {
+    width: 50px; /* 원하는 너비 */
+    height: auto; /* 비율을 유지하면서 높이를 자동 조절 */
+    margin-right: 10px; /* 이미지와 텍스트 간 여백 */
+    border-radius: 5px; /* 둥근 모서리 효과 (선택 사항) */
+}
+
 .menu, .cart-item {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
     background-color: #fafafa;
-    cursor: grab;
+    cursor: grab;    
+    display: block;
+    position: relative;
+
 }
 
 .menu:active, .cart-item:active {
