@@ -84,3 +84,27 @@ button.decrease {
 button.decrease:hover {
     background-color: #c9303e;
 }
+.menu-management, .sales-management {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.menu-box .menu {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+#salesLog p {
+    margin: 5px 0;
+}

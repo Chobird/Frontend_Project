@@ -196,6 +196,59 @@ function resetAll() {
         menu.addEventListener("dragend", onDragEndMenu);
     });
 }
+$(document).ready(function () {
+    $("#addMenu").click(function () {
+        const menuName = $("#menuName").val();
+        const menuPrice = $("#menuPrice").val();
+        const fileInput = $("#menuImage")[0].files[0];
+
+        if (!menuName || !menuPrice || !fileInput) {
+            alert("모든 필드를 입력해주세요!");
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const menuHtml = `
+                <div class="menu-item">
+                    <img src="${e.target.result}" alt="${menuName}" style="max-width: 100px;">
+                    <p>${menuName} (${menuPrice}원)</p>
+                </div>
+            `;
+            $("#menuList").append(menuHtml);
+        };
+
+        reader.readAsDataURL(fileInput);
+
+        // 폼 초기화
+        $("#menuForm")[0].reset();
+    });
+});
+
+let totalSales = 0;
+
+function logSale(itemName, itemPrice, quantity) {
+    const logEntry = `<p>${itemName} - ${quantity}개 (₩${itemPrice * quantity})</p>`;
+    $("#salesLog").append(logEntry);
+
+    totalSales += itemPrice * quantity;
+    $("#totalSales").text(totalSales.toLocaleString());
+}
+
+$(document).on("click", ".menu", function () {
+    const name = $(this).attr("menuname");
+    const price = parseInt($(this).attr("price"));
+
+    // 판매 내역에 기록 (여기선 1개를 판매했다고 가정)
+    logSale(name, price, 1);
+});
+
+$("#resetSales").click(function () {
+    $("#salesLog").empty();
+    totalSales = 0;
+    $("#totalSales").text(totalSales);
+});
 
 $(document).ready(function () {
     const menuArray = document.getElementsByClassName("menu");

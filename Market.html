@@ -37,6 +37,27 @@
         <div class="payment-section">
             <button id="payment-button">결제</button>
         </div>
+        <form id="menuForm" enctype="multipart/form-data">
+            <label for="menuName">메뉴 이름:</label>
+            <input type="text" id="menuName" name="menuName" required>
+            
+            <label for="menuPrice">메뉴 가격:</label>
+            <input type="number" id="menuPrice" name="menuPrice" required>
+        
+            <label for="menuImage">이미지 첨부:</label>
+            <input type="file" id="menuImage" name="menuImage" accept="image/*" required>
+        
+            <button type="button" id="addMenu">메뉴 추가</button>
+        </form>
+        <div id="menuList"></div>
+        
+        
+        <div class="sales-management">
+            <h3>판매 내역</h3>
+            <div id="salesLog"></div>
+            <p>총 판매 금액: <span id="totalSales">0</span>원</p>
+            <button id="resetSales">판매 내역 초기화</button>
+        </div>
         
     </div>
 </body>
