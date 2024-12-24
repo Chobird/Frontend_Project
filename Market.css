@@ -27,10 +27,10 @@ h1 {
 }
 
 .menu img, .cart-item img {
-    width: 50px; /* 원하는 너비 */
-    height: auto; /* 비율을 유지하면서 높이를 자동 조절 */
-    margin-right: 10px; /* 이미지와 텍스트 간 여백 */
-    border-radius: 5px; /* 둥근 모서리 효과 (선택 사항) */
+    width: 50px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and text */
+    border-radius: 5px; /* Optional rounded corners */
 }
 
 .menu, .cart-item {
@@ -39,10 +39,9 @@ h1 {
     padding: 10px;
     margin-bottom: 10px;
     background-color: #fafafa;
-    cursor: grab;    
+    cursor: grab;
     display: block;
     position: relative;
-
 }
 
 .menu:active, .cart-item:active {
@@ -84,6 +83,7 @@ button.decrease {
 button.decrease:hover {
     background-color: #c9303e;
 }
+
 .menu-management, .sales-management {
     margin: 20px;
     padding: 10px;

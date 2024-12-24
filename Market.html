@@ -37,20 +37,41 @@
         <div class="payment-section">
             <button id="payment-button">결제</button>
         </div>
-        <form id="menuForm" enctype="multipart/form-data">
-            <label for="menuName">메뉴 이름:</label>
-            <input type="text" id="menuName" name="menuName" required>
-            
-            <label for="menuPrice">메뉴 가격:</label>
-            <input type="number" id="menuPrice" name="menuPrice" required>
+
+        <!-- 관리자 로그인 버튼 -->
+<button id="adminLoginBtn">관리자 로그인</button>
+
+<!-- 관리자 로그인 폼 -->
+<div id="adminLoginForm" style="display: none;">
+    <label for="adminId">아이디:</label>
+    <input type="text" id="adminId" placeholder="관리자 아이디">
+    <label for="adminPassword">비밀번호:</label>
+    <input type="password" id="adminPassword" placeholder="비밀번호">
+    <button id="loginBtn">로그인</button>
+    <button id="cancelLogin">취소</button>
+</div>
+
+<!-- 관리자 기능 -->
+<div id="adminPanel" style="display: none;">
+    <h2>관리자 기능</h2>
+    <form id="menuForm" enctype="multipart/form-data">
+        <label for="menuName">메뉴 이름:</label>
+        <input type="text" id="menuName" name="menuName" required>
         
-            <label for="menuImage">이미지 첨부:</label>
-            <input type="file" id="menuImage" name="menuImage" accept="image/*" required>
-        
-            <button type="button" id="addMenu">메뉴 추가</button>
-        </form>
-        <div id="menuList"></div>
-        
+        <label for="menuPrice">메뉴 가격:</label>
+        <input type="number" id="menuPrice" name="menuPrice" required>
+    
+        <label for="menuImage">이미지 첨부:</label>
+        <input type="file" id="menuImage" name="menuImage" accept="image/*" required>
+    
+        <button type="button" id="addMenu">메뉴 추가</button>
+    </form>
+    <div id="menuList"></div>
+    <button id="deleteMenuBtn">메뉴 삭제</button>
+    <button id="resetSalesBtn">판매 내역 초기화</button>
+    <button id="logoutBtn">로그아웃</button>
+</div>
+
         
         <div class="sales-management">
             <h3>판매 내역</h3>

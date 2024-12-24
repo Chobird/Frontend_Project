@@ -270,3 +270,69 @@ $(document).ready(function () {
         box.addEventListener("drop", onDropbox);
     }
 });
+$(document).ready(function () {
+    // 관리자 로그인 정보
+    const ADMIN_ID = "admin";
+    const ADMIN_PASSWORD = "1234";
+
+    // LocalStorage 초기화
+    const MENU_STORAGE_KEY = "menuData";
+    const SALES_STORAGE_KEY = "salesData";
+
+    if (!localStorage.getItem(MENU_STORAGE_KEY)) {
+        localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify([]));
+    }
+    if (!localStorage.getItem(SALES_STORAGE_KEY)) {
+        localStorage.setItem(SALES_STORAGE_KEY, JSON.stringify([]));
+    }
+
+    // 관리자 로그인 버튼 클릭
+    $("#adminLoginBtn").click(function () {
+        $("#adminLoginForm").show();
+    });
+
+    // 로그인 확인
+    $("#loginBtn").click(function () {
+        const id = $("#adminId").val();
+        const password = $("#adminPassword").val();
+
+        if (id === ADMIN_ID && password === ADMIN_PASSWORD) {
+            alert("관리자 로그인 성공");
+            $("#adminLoginForm").hide();
+            $("#adminPanel").show();
+        } else {
+            alert("아이디 또는 비밀번호가 잘못되었습니다.");
+        }
+    });
+
+    // 로그인 취소
+    $("#cancelLogin").click(function () {
+        $("#adminLoginForm").hide();
+    });
+
+    // 로그아웃
+    $("#logoutBtn").click(function () {
+        $("#adminPanel").hide();
+    });
+    // 메뉴 삭제 버튼
+    $("#deleteMenuBtn").click(function () {
+        const menuName = prompt("삭제할 메뉴 이름을 입력하세요:");
+
+        if (menuName) {
+            let menuData = JSON.parse(localStorage.getItem(MENU_STORAGE_KEY));
+            menuData = menuData.filter(menu => menu.name !== menuName);
+            localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuData));
+            alert("메뉴가 삭제되었습니다!");
+        } else {
+            alert("메뉴 이름을 입력해주세요.");
+        }
+    });
+
+    // 판매 내역 초기화 버튼
+    $("#resetSalesBtn").click(function () {
+        if (confirm("판매 내역을 초기화하시겠습니까?")) {
+            localStorage.setItem(SALES_STORAGE_KEY, JSON.stringify([]));
+            alert("판매 내역이 초기화되었습니다!");
+        }
+    });
+});
